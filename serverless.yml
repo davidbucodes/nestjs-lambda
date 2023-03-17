@@ -1,0 +1,24 @@
+service: nestjs-lambda-test
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+    reloadHandler: true
+
+functions:
+  main:
+    handler: dist/lambda.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
