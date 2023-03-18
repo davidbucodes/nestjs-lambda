@@ -15,6 +15,7 @@ custom:
 functions:
   main:
     handler: dist/lambda.handler
+    url: true
     events:
       - http:
           method: ANY
