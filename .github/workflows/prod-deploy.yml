@@ -20,4 +20,5 @@ jobs:
       - run: npm i -g serverless
       - run: npm ci
       - run: npm test
+      - run: npm run build
       - run: npm run sls:deploy
